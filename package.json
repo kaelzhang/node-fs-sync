@@ -1,0 +1,15 @@
+{
+  "name": "fs-more",
+  "version": "0.0.3",
+  "description": "fs more",
+  "main": "lib/fs-more.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kael",
+  "license": "BSD",
+  "keywords": [
+    "fs"
+  ],
+  "repository": ""
+}
