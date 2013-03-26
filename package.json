@@ -1,6 +1,6 @@
 {
   "name": "fs-more",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "fs more",
   "main": "lib/fs-more",
   "scripts": {
@@ -11,5 +11,9 @@
   "keywords": [
     "fs"
   ],
-  "repository": ""
+  "repository": "",
+
+  "dependencies": {
+    "nimimatch": "0.2.11"
+  },
 }
