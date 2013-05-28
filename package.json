@@ -1,8 +1,8 @@
 {
   "name": "fs-more",
-  "version": "0.1.5",
-  "description": "fs more",
-  "main": "lib/fs-more",
+  "version": "1.0.1",
+  "description": "",
+  "main": "dist/index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,8 +12,11 @@
     "fs"
   ],
   "repository": "",
-
   "dependencies": {
-    "minimatch": "0.2.11"
+    "minimatch": "0.2.11",
+    "mkdirp": "~0.3.5"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1"
   }
 }

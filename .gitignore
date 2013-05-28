@@ -1,5 +1,6 @@
 # Neuron specified folders
 build/
+old/
 
 # PHP files
 index.php
