@@ -43,6 +43,6 @@ module.exports = function( grunt ) {
     // grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // grunt.registerTask('default', ['build', 'jshint', /* 'mocha' */, 'uglify']);
-    grunt.registerTask('dev', ['build']);
+    grunt.registerTask('default', ['build']);
 
 };
