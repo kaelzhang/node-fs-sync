@@ -145,7 +145,7 @@ sync.isFile = function() {
 };
 
 sync.isPathAbsolute = function() {
-  	var filepath = path.join.apply(path, arguments);
+  	var filepath = node_path.join.apply(node_path, arguments);
   	return node_path.resolve(filepath) === filepath.replace(/[\/\\]+$/, '');
 };
 
