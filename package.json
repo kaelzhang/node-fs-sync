@@ -1,41 +1,43 @@
 {
-  "name": "fs-sync",
-  "version": "0.0.4",
-  "description": "synchronous fs with more fun",
-  "main": "dist/index",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "kael",
-  "license": "BSD",
-  "keywords": [
-    "fs",
-    "fs-sync",
-    "sync",
-    "synchronous fs",
-    "copy",
-    "mkdir",
-    "mkdirp",
-    "write",
-    "read",
-    "readJSON",
-    "isDir",
-    "isFile",
-    "isLink",
-    "exists",
-    "grunt file",
-    "delete",
-    "expand"
-  ],
-  "repository": "",
-  "dependencies": {
-    "mkdirp": "~0.3.5",
-    "iconv-lite": "~0.2.10",
-    "lodash": "~1.2.1",
-    "glob": "~3.2.1",
-    "rimraf": "~2.1.4"
-  },
-  "devDependencies": {
-    "grunt": "~0.4.1"
-  }
+    "name": "fs-sync",
+    "version": "0.0.5",
+    "description": "synchronous fs with more fun",
+    "main": "dist/index",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "kael",
+    "license": "BSD",
+    "keywords": [
+        "fs",
+        "fs-sync",
+        "sync",
+        "synchronous fs",
+        "copy",
+        "mkdir",
+        "mkdirp",
+        "write",
+        "read",
+        "readJSON",
+        "isDir",
+        "isFile",
+        "isLink",
+        "exists",
+        "grunt file",
+        "delete",
+        "expand",
+        "contain"
+    ],
+    "repository": "",
+    "dependencies": {
+        "mkdirp": "~0.3.5",
+        "iconv-lite": "~0.2.10",
+        "lodash": "~1.2.1",
+        "glob": "~3.2.1",
+        "rimraf": "~2.1.4"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1"
+    },
+    "cortexExactDependencies": {}
 }
