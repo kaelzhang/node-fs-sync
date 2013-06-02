@@ -1,6 +1,6 @@
 {
     "name": "fs-sync",
-    "version": "0.0.5",
+    "version": "0.1.6",
     "description": "synchronous fs with more fun",
     "main": "dist/index",
     "scripts": {
