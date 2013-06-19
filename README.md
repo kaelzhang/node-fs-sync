@@ -13,10 +13,6 @@ Once `fs-sync` is installed, you can use:
 		var pkg = fs.readJSON('package.json');
 	}
 	
-	// You can also use methods of the built-in `fs`
-	
-	fs.readFileSync(...);
-	
 	
 ## Methods
 
