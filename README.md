@@ -7,16 +7,19 @@ This module is created for the favor of use of `fs.xxxSync`.
 
 Once `fs-sync` is installed, you can use:
 
-	var fs = require('fs-sync');
-	
-	if(fs.exists('package.json')){
-		var pkg = fs.readJSON('package.json');
-	}
-	
+```js
+var fs = require('fs-sync');
+
+if(fs.exists('package.json')){
+	var pkg = fs.readJSON('package.json');
+}
+```	
 	
 ## Methods
 
-	var fs = require('fs-sync');
+```js
+var fs = require('fs-sync');
+```
 	
 ### fs.defaultEncoding
 Type: `String`
@@ -25,16 +28,20 @@ Default value: `'utf-8'`
 
 Global default encoding
 
-	fs.defaultEncoding = 'utf-8'
+```js
+fs.defaultEncoding = 'utf-8'
+```
 
 ### fs.copy()
 
 Copy a file or a whole directory to the destination. During this, necessary directories will be created.
 
 #### Syntax
-	
-	fs.copy(file, destpath, options);
-	fs.copy(dir, destpath, options);
+
+```js
+fs.copy(file, destpath, options);
+fs.copy(dir, destpath, options);
+```
 	
 #### file
 Type: `String`
@@ -91,10 +98,11 @@ Read a file as the JSON format, if the file content fails to be parsed as JSON, 
 Delete a file or a whole directory. It's a dangerous action, be careful.
 
 #### Syntax
-	
-	fs.delete(file)
-	fs.delete(dir)
 
+```js	
+fs.delete(file)
+fs.delete(dir)
+```
 
 ### fs.exists()
 
