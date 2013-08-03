@@ -1,6 +1,6 @@
 {
     "name": "fs-sync",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "description": "synchronous fs with more fun",
     "main": "dist/index",
     "scripts": {
@@ -8,6 +8,10 @@
     },
     "author": "kael",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/kaelzhang/fs-sync.git"
+    },
     "keywords": [
         "fs",
         "fs-sync",
@@ -38,6 +42,5 @@
     },
     "devDependencies": {
         "grunt": "~0.4.1"
-    },
-    "cortexExactDependencies": {}
+    }
 }
