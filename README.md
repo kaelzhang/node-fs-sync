@@ -32,7 +32,7 @@ Global default encoding
 fs.defaultEncoding = 'utf-8'
 ```
 
-### fs.copy()
+### fs.copy(from, to, options)
 
 Copy a file or a whole directory to the destination. During this, necessary directories will be created.
 
@@ -61,7 +61,8 @@ Default value: `false`
 By default, `fs.copy` will not override existed files, set `options.force` as `true` to override.
 
 
-### fs.mkdir()
+### fs.mkdir(path)
+
 Commandline `mkdir` or `mkdir -p`
 
 
@@ -93,9 +94,12 @@ Default value: `fs.defaultEncoding`
 ### fs.readJSON(file, options)
 Read a file as the JSON format, if the file content fails to be parsed as JSON, an error will be thrown.
 
-### fs.delete()
+### fs.remove(file)
+### fs.remove(dir)
 
 Delete a file or a whole directory. It's a dangerous action, be careful.
+
+Equivalent to `rm -rf`(remove a folder and all its contents) or `rm -f`(unlink a file)
 
 #### Syntax
 
@@ -104,15 +108,42 @@ fs.delete(file)
 fs.delete(dir)
 ```
 
-### fs.exists()
+### fs.exists(...)
 
 `arguments` will be called with `path.join`
 
-### fs.isDir()
+### fs.isDir(path)
 
-### fs.isFile()
+### fs.isFile(path)
 
-### fs.isLink()
+### fs.isLink(path)
+
+### fs.isPathAbsolute(path)
+
+#### Returns `Boolean`
+
+Whether the given `path` is an absolute path (starting with `'/'`)
+
+### fs.doesPathContain(ancestor, path...)
+
+```js
+if(fs.doesPathContain(ancestor, path, path2)){
+	console.log(path, 'and', path2, 'are inside', ancestor);
+}
+```
+
+#### Returns `Boolean`
+
+Whether path `ancestor` contains all `path`s after
+
+#### ancestor `String`
+
+Ancestor path
+
+#### path `String`
+
+The arguments of `fs.doesPathContain` could be more than 2.
+
 
 
 
