@@ -18,104 +18,91 @@ var sync = module.exports = {};
 // callback, excluding and uniquing files in the result set.
 function processPatterns(patterns, fn) {
 
-	// Filepaths to return.
-	var result = [];
-	// Iterate over flattened patterns array.
-	_.flatten(patterns).forEach(function(pattern) {
-		// If the first character is ! it should be omitted
-		var exclusion = pattern.indexOf('!') === 0;
-		// If the pattern is an exclusion, remove the !
-		if (exclusion) {
-			pattern = pattern.slice(1);
-		}
-		// Find all matching files for this pattern.
-		var matches = fn(pattern);
+    // Filepaths to return.
+    var result = [];
+    // Iterate over flattened patterns array.
+    _.flatten(patterns).forEach(function(pattern) {
+        // If the first character is ! it should be omitted
+        var exclusion = pattern.indexOf('!') === 0;
+        // If the pattern is an exclusion, remove the !
+        if (exclusion) {
+            pattern = pattern.slice(1);
+        }
+        // Find all matching files for this pattern.
+        var matches = fn(pattern);
 
-		if (exclusion) {
-			// If an exclusion, remove matching files.
-			result = _.difference(result, matches);
-		} else {
-			// Otherwise add matching files.
-			result = _.union(result, matches);
-		}
-	});
-	
-	return result;
+        if (exclusion) {
+            // If an exclusion, remove matching files.
+            result = _.difference(result, matches);
+        } else {
+            // Otherwise add matching files.
+            result = _.union(result, matches);
+        }
+    });
+    
+    return result;
 };
 
 
 // Are descendant path(s) contained within ancestor path? Note: does not test
 // if paths actually exist.
 sync.doesPathContain = function(ancestor) {
-	ancestor = node_path.resolve(ancestor);
-	
-	var relative;
-	var i = 1;
+    ancestor = node_path.resolve(ancestor);
+    
+    var relative;
+    var i = 1;
 
-	for (; i < arguments.length; i ++) {
-		relative = node_path.relative(node_path.resolve(arguments[i]), ancestor);
-		if (relative === '' || /\w+/.test(relative)) {
-			return false;
-		}
-	}
+    for (; i < arguments.length; i ++) {
+        relative = node_path.relative(node_path.resolve(arguments[i]), ancestor);
+        if (relative === '' || /\w+/.test(relative)) {
+            return false;
+        }
+    }
 
-	return true;
+    return true;
 };
 
 
 
 // @param {Object} options {
-//		force: {boolean} force to overridding
+//        force: {boolean} force to overridding
 // }
 sync.copy = function(file, dest, options) {
-	if(!options){
-		options = {};
-	}
-
-	// 'abc/' -> '/xxxx/xxx/abc'
-	// 'abc.js' -> '/xxx/xxx/abc.js'
-	file = node_path.resolve(file);
-
-	if(sync.isFile(file)){
-		var content = sync.read(file);
-
-	    if(options.force || !sync.exists(dest)){
-	    	return sync.write(dest, content, options);
-	    }
-
-	    return false;
-
-	}else if(sync.isDir(file)){
-
-		var dir = file;
-		dest = node_path.resolve(dest);
-
-		sync.expand('**', {
-
-			// to get relative paths to dir
-			cwd: dir
-
-		}).forEach(function(path) {
-			var full_path = node_path.join(dir, path);
-
-		    if(sync.isFile(full_path)){
-		    	sync.copy(full_path, node_path.join(dest, path), options);
-		    }
-		});
-	}
-};
-
-// Delete folders and files recursively
-sync.delete = function(filepath) {
-    filepath = String(filepath);
-
-    if (!sync.exists(filepath)) {
-        return false;
+    if(!options){
+        options = {};
     }
 
-    rimraf.sync(filepath);
+    // 'abc/' -> '/xxxx/xxx/abc'
+    // 'abc.js' -> '/xxx/xxx/abc.js'
+    file = node_path.resolve(file);
 
-    return true;
+    if(sync.isFile(file)){
+        var content = sync.read(file);
+
+        if(options.force || !sync.exists(dest)){
+            return sync.write(dest, content, options);
+        }
+
+        return false;
+
+    }else if(sync.isDir(file)){
+
+        var dir = file;
+        dest = node_path.resolve(dest);
+
+        sync.expand('**', {
+
+            // to get relative paths to dir
+            cwd: dir
+
+        }).forEach(function(path) {
+            var full_path = node_path.join(dir, path);
+
+            if(sync.isFile(full_path)){
+                sync.copy(full_path, node_path.join(dest, path), options);
+            }
+        });
+    }
 };
 
 
@@ -146,25 +133,25 @@ sync.exists = function() {
 
 //@returns true if the file is a symbolic link.
 sync.isLink = function() {
-  	var filepath = node_path.join.apply(node_path, arguments);
-  	return node_fs.existsSync(filepath) && node_fs.lstatSync(filepath).isSymbolicLink();
+      var filepath = node_path.join.apply(node_path, arguments);
+      return node_fs.existsSync(filepath) && node_fs.lstatSync(filepath).isSymbolicLink();
 };
 
 // @returns {boolean} true if the path is a directory.
 sync.isDir = function() {
-  	var filepath = node_path.join.apply(node_path, arguments);
-  	return node_fs.existsSync(filepath) && node_fs.statSync(filepath).isDirectory();
+      var filepath = node_path.join.apply(node_path, arguments);
+      return node_fs.existsSync(filepath) && node_fs.statSync(filepath).isDirectory();
 };
 
 // @returns {boolean} true if the path is a file.
 sync.isFile = function() {
-	var filepath = node_path.join.apply(node_path, arguments);
-  	return node_fs.existsSync(filepath) && node_fs.statSync(filepath).isFile();
+    var filepath = node_path.join.apply(node_path, arguments);
+      return node_fs.existsSync(filepath) && node_fs.statSync(filepath).isFile();
 };
 
 sync.isPathAbsolute = function() {
-  	var filepath = node_path.join.apply(node_path, arguments);
-  	return node_path.resolve(filepath) === filepath.replace(/[\/\\]+$/, '');
+      var filepath = node_path.join.apply(node_path, arguments);
+      return node_path.resolve(filepath) === filepath.replace(/[\/\\]+$/, '');
 };
 
 var mkdirp = require('mkdirp');
@@ -175,8 +162,8 @@ sync.defaultEncoding = 'utf-8';
 
 sync.read = function(filepath, options) {
     if (!options) {
-    	options = {};
-   	}
+        options = {};
+       }
 
     var contents;
 
@@ -197,7 +184,20 @@ sync.read = function(filepath, options) {
 
 sync.readJSON = function(filepath, options) {
     var src = sync.read(filepath, options);
-  	return JSON.parse(src);
+      return JSON.parse(src);
+};
+
+// Delete folders and files recursively
+sync.remove = function(filepath) {
+    filepath = String(filepath);
+
+    if (!sync.exists(filepath)) {
+        return false;
+    }
+
+    rimraf.sync(filepath);
+
+    return true;
 };
 
 // Write a file.

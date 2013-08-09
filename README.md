@@ -94,8 +94,7 @@ Default value: `fs.defaultEncoding`
 ### fs.readJSON(file, options)
 Read a file as the JSON format, if the file content fails to be parsed as JSON, an error will be thrown.
 
-### fs.remove(file)
-### fs.remove(dir)
+### fs.remove()
 
 Delete a file or a whole directory. It's a dangerous action, be careful.
 
@@ -104,8 +103,8 @@ Equivalent to `rm -rf`(remove a folder and all its contents) or `rm -f`(unlink a
 #### Syntax
 
 ```js	
-fs.delete(file)
-fs.delete(dir)
+fs.remove(file)
+fs.remove(dir)
 ```
 
 ### fs.exists(...)
