@@ -32,7 +32,6 @@
         "expand",
         "contain"
     ],
-    "repository": "",
     "dependencies": {
         "mkdirp": "~0.3.5",
         "iconv-lite": "~0.2.10",
