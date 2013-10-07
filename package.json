@@ -1,6 +1,6 @@
 {
     "name": "fs-sync",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "synchronous fs with more fun",
     "main": "dist/index",
     "scripts": {
@@ -10,7 +10,10 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "git://github.com/kaelzhang/fs-sync.git"
+        "url": "git@github.com:kaelzhang/node-fs-sync.git"
+    },
+    "bugs": {
+      "url": "https://github.com/kaelzhang/node-fs-sync/issues"
     },
     "keywords": [
         "fs",
