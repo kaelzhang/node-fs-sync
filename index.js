@@ -234,4 +234,3 @@ sync.write = function(filepath, contents, options) {
 
   return true;
 };
-
