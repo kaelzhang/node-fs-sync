@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kaelzhang/node-fs-sync.png?branch=master)](https://travis-ci.org/kaelzhang/node-fs-sync)
+
 # fs-sync
 
 > Synchronous fs with more fun

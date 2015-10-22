@@ -1,10 +1,10 @@
 {
   "name": "fs-sync",
-  "version": "0.2.6",
+  "version": "1.0.0",
   "description": "synchronous fs with more fun",
-  "main": "dist/index",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec ./test/*.js"
   },
   "author": "kael",
   "license": "MIT",
@@ -36,13 +36,15 @@
     "contain"
   ],
   "dependencies": {
-    "mkdirp": "~0.3.5",
-    "iconv-lite": "~0.2.10",
-    "lodash": "~1.2.1",
-    "glob": "~4.0.4",
-    "rimraf": "~2.1.4"
+    "mkdirp": "^0.3.5",
+    "iconv-lite": "^0.2.10",
+    "lodash": "^1.2.1",
+    "glob": "^4.0.4",
+    "rimraf": "^2.1.4"
   },
   "devDependencies": {
-    "grunt": "~0.4.1"
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3",
+    "tmp": "0.0.28"
   }
 }

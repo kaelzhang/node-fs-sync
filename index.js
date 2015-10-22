@@ -77,7 +77,7 @@ sync.copy = function(file, dest, options) {
   file = node_path.resolve(file);
 
   if (sync.isFile(file)) {
-    var content = sync.read(file);
+    var content = sync.read(file, options);
 
     if (options.force || !sync.exists(dest)) {
       return sync.write(dest, content, options);
@@ -182,7 +182,7 @@ sync.read = function(filepath, options) {
 
   var contents;
 
-  contents = node_fs.readFileSync(String(filepath));
+  contents = node_fs.readFileSync(filepath, options);
   // If encoding is not explicitly null, convert from encoded buffer to a
   // string. If no encoding was specified, use the default.
   if (options.encoding !== null) {
@@ -223,6 +223,8 @@ sync.write = function(filepath, contents, options) {
 
   // Create path, if necessary.
   sync.mkdir(node_path.dirname(filepath));
+
+  console.log('is buffer', Buffer.isBuffer(contents))
 
   // If contents is already a Buffer, don't try to encode it. If no encoding
   // was specified, use the default.
