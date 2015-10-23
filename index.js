@@ -224,8 +224,6 @@ sync.write = function(filepath, contents, options) {
   // Create path, if necessary.
   sync.mkdir(node_path.dirname(filepath));
 
-  console.log('is buffer', Buffer.isBuffer(contents))
-
   // If contents is already a Buffer, don't try to encode it. If no encoding
   // was specified, use the default.
   if (!Buffer.isBuffer(contents)) {
