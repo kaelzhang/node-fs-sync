@@ -21,7 +21,7 @@ function processPatterns(patterns, fn) {
   // Filepaths to return.
   var result = [];
   // Iterate over flattened patterns array.
-  _.flatten(patterns).forEach(function(pattern) {
+  _.flattenDeep(patterns).forEach(function(pattern) {
     // If the first character is ! it should be omitted
     var exclusion = pattern.indexOf('!') === 0;
     // If the pattern is an exclusion, remove the !
