@@ -1,6 +1,6 @@
 {
   "name": "fs-sync",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "synchronous fs with more fun",
   "main": "index.js",
   "scripts": {
@@ -36,10 +36,10 @@
     "contain"
   ],
   "dependencies": {
-    "mkdirp": "^0.3.5",
-    "iconv-lite": "^0.2.10",
-    "lodash": "^4",
-    "glob": "^4.0.4",
+    "glob": "^7.1.0",
+    "iconv-lite": "^0.4.13",
+    "lodash": "^4.16.1",
+    "mkdirp": "^0.5.1",
     "rimraf": "^2.1.4"
   },
   "devDependencies": {
