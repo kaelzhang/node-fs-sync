@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 // External modules
 var node_path = require('path');
 var node_fs = require('fs');
