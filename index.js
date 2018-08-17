@@ -75,9 +75,9 @@ sync.copy = function(file, dest, options) {
   file = node_path.resolve(file);
 
   if (sync.isFile(file)) {
-    var content = sync.read(file, options);
-
     if (options.force || !sync.exists(dest)) {
+      var content = sync.read(file, options);
+
       return sync.write(dest, content, options);
     }
 
