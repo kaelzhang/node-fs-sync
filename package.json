@@ -1,11 +1,14 @@
 {
   "name": "fs-sync",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "synchronous fs with more fun",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec ./test/*.js"
   },
+  "files": [
+    "index.js"
+  ],
   "author": "kael",
   "license": "MIT",
   "repository": {
