@@ -1,3 +1,7 @@
+Maintenance for this project has been discontinued in favor of using [fs-extra](https://www.npmjs.com/package/fs-extra)
+
+----
+
 [![Build Status](https://travis-ci.org/kaelzhang/node-fs-sync.png?branch=master)](https://travis-ci.org/kaelzhang/node-fs-sync)
 
 # fs-sync
@@ -15,14 +19,14 @@ var fs = require('fs-sync');
 if(fs.exists('package.json')){
 	var pkg = fs.readJSON('package.json');
 }
-```	
-	
+```
+
 ## Methods
 
 ```js
 var fs = require('fs-sync');
 ```
-	
+
 ### fs.defaultEncoding
 Type: `String`
 
@@ -44,7 +48,7 @@ Copy a file or a whole directory to the destination. During this, necessary dire
 fs.copy(file, destpath, options);
 fs.copy(dir, destpath, options);
 ```
-	
+
 #### file
 Type: `String`
 
@@ -71,7 +75,7 @@ Commandline `mkdir` or `mkdir -p`
 ### fs.expand(patterns, options)
 
 Like `grunt.file.expand`, but the sequence of the arguments is different
-	
+
 
 ### fs.write(file, content, options)
 
@@ -104,7 +108,7 @@ Equivalent to `rm -rf`(remove a folder and all its contents) or `rm -f`(unlink a
 
 #### Syntax
 
-```js	
+```js
 fs.remove(file)
 fs.remove(dir)
 ```
@@ -148,4 +152,4 @@ The arguments of `fs.doesPathContain` could be more than 2.
 
 
 
-	
+
